@@ -63,8 +63,6 @@ markdown_extensions:
   - pymdownx.details
 
 plugins:
-  # - macros
-  - section-index # Make top-level nav sections that contain an index.md clickable
   - search
   - autorefs
   - glightbox
