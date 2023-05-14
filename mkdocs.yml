@@ -1,0 +1,81 @@
+site_name: ChatGPT Prompt Engineering for Developers
+site_description: ChatGPT Prompt Engineering for Developers
+site_author: Ashish Kumar
+
+repo_url: https://github.com/ashishkrb7/chatgpt.git
+edit_uri: edit/main/docs/
+
+copyright: "Copyright &copy; 2023 Ashish Kumar"
+
+nav:
+  - Introduction: index.md
+  - Principles: Guidelines.md
+  - Prompt Development: Iterative Prompt Development.md
+  - Capabilities:
+    - Summarizing: Summarizing.md
+    - Inferring: Inferring.md
+    - Transforming: Transforming.md
+    - Expanding: Expanding.md
+  - Chatbot: Chatbot.md
+  - Contact: contact.md
+
+theme:
+  features:
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.sections
+  font: false
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/git-alt
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/email_modal.js
+# edit_uri: ""
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - md_in_html
+  - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets:
+      base_path: docs
+  - pymdownx.superfences
+  - pymdownx.details
+
+plugins:
+  # - macros
+  - section-index # Make top-level nav sections that contain an index.md clickable
+  - search
+  - autorefs
+  - glightbox
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/ashishkrb7/
+  analytics:
+    provider: custom
+
+watch:
+  - docs
+  - mkdocs.yml
