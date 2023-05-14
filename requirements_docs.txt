@@ -5,3 +5,4 @@ mkdocs-macros-plugin
 mkdocs-section-index
 mkdocs-glightbox
 mkdocs-autorefs
+mkdocs-section-index
