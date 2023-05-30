@@ -13,4 +13,4 @@ jobs:
           python-version: 3.8
       - run: pip install --upgrade pip
       - run: pip install -r requirements_docs.txt
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy
