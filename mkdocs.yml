@@ -20,31 +20,33 @@ nav:
   - Contact: contact.md
 
 theme:
-  name: material
+  name: mkdocs
   features:
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
-    - content.code.copy
-  language: en
+    # - navigation.tabs.sticky
+    # - navigation.sections
+  font: false
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: orange
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/brightness-7
         name: Switch to dark mode
-      primary: teal
-      accent: purple 
-    - scheme: slate 
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: orange
       toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
-      accent: lime
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/git-alt
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/email_modal.js
 # edit_uri: ""
 
 markdown_extensions:
