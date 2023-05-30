@@ -25,7 +25,7 @@ theme:
     # - navigation.tabs.sticky
     # - navigation.sections
   font: false
-  name: material
+  name: "material"
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
