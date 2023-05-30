@@ -20,12 +20,14 @@ nav:
   - Contact: contact.md
 
 theme:
+  name: material
+  feature:
+    instant: true
   features:
     - navigation.tabs
     # - navigation.tabs.sticky
     # - navigation.sections
   font: false
-  name: "material"
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
