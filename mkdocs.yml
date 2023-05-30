@@ -20,7 +20,7 @@ nav:
   - Contact: contact.md
 
 theme:
-  name: material
+  name: mkdocs
   feature:
     instant: true
   features:
