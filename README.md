@@ -1,4 +1,4 @@
-[Official Documentation](https://ashishkrb7.github.io/chatgpt/)
+[Documentation](https://ashishkrb7.github.io/chatgpt/)
 
 # ChatGPT Prompt Engineering for Developers
 
