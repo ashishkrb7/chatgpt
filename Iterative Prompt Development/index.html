@@ -1,0 +1,970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ChatGPT Prompt Engineering for Developers">
+      
+      
+        <meta name="author" content="Ashish Kumar">
+      
+      
+      
+        <link rel="prev" href="../Guidelines/">
+      
+      
+        <link rel="next" href="../Summarizing/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+    
+    
+      
+        <title>Iterative Prompt Development - ChatGPT Prompt Engineering for Developers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iterative-prompt-develelopment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ChatGPT Prompt Engineering for Developers" class="md-header__button md-logo" aria-label="ChatGPT Prompt Engineering for Developers" data-md-component="logo">
+      
+  <img src="../images/chatgpt-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ChatGPT Prompt Engineering for Developers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Iterative Prompt Development
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Guidelines/" class="md-tabs__link">
+      Principles
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Iterative Prompt Development
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Summarizing/" class="md-tabs__link">
+        Capabilities
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Chatbot/" class="md-tabs__link">
+      Chatbot
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../contact/" class="md-tabs__link">
+      Contact
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ChatGPT Prompt Engineering for Developers" class="md-nav__button md-logo" aria-label="ChatGPT Prompt Engineering for Developers" data-md-component="logo">
+      
+  <img src="../images/chatgpt-logo.png" alt="logo">
+
+    </a>
+    ChatGPT Prompt Engineering for Developers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidelines/" class="md-nav__link">
+        Principles
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Iterative Prompt Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Iterative Prompt Development
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-marketing-product-description-from-a-product-fact-sheet" class="md-nav__link">
+    Generate a marketing product description from a product fact sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-1-the-text-is-too-long" class="md-nav__link">
+    Issue 1: The text is too long
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-2-text-focuses-on-the-wrong-details" class="md-nav__link">
+    Issue 2. Text focuses on the wrong details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-3-description-needs-a-table-of-dimensions" class="md-nav__link">
+    Issue 3. Description needs a table of dimensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-python-libraries-to-view-html" class="md-nav__link">
+    Load Python libraries to view HTML
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Capabilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Summarizing/" class="md-nav__link">
+        Summarizing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Inferring/" class="md-nav__link">
+        Inferring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Transforming/" class="md-nav__link">
+        Transforming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expanding/" class="md-nav__link">
+        Expanding
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chatbot/" class="md-nav__link">
+        Chatbot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-marketing-product-description-from-a-product-fact-sheet" class="md-nav__link">
+    Generate a marketing product description from a product fact sheet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-1-the-text-is-too-long" class="md-nav__link">
+    Issue 1: The text is too long
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-2-text-focuses-on-the-wrong-details" class="md-nav__link">
+    Issue 2. Text focuses on the wrong details
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-3-description-needs-a-table-of-dimensions" class="md-nav__link">
+    Issue 3. Description needs a table of dimensions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-python-libraries-to-view-html" class="md-nav__link">
+    Load Python libraries to view HTML
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="iterative-prompt-develelopment">Iterative Prompt Develelopment</h1>
+<p>In this page we will iteratively analyze and refine your prompts to generate marketing copy from a product fact sheet.</p>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">openai</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span><span class="p">,</span> <span class="n">find_dotenv</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">load_dotenv</span><span class="p">(</span><span class="n">find_dotenv</span><span class="p">())</span>
+
+<span class="n">openai</span><span class="o">.</span><span class="n">api_type</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_type"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_base"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_version"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"OPENAI_API_KEY"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"chatgpt-gpt35-turbo"</span><span class="p">):</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}]</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">engine</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># this is the degree of randomness of the model's output</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+        <span class="n">top_p</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+        <span class="n">frequency_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">presence_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="generate-a-marketing-product-description-from-a-product-fact-sheet">Generate a marketing product description from a product fact sheet</h2>
+<div class="highlight"><pre><span></span><code><span class="n">fact_sheet_chair</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">OVERVIEW</span>
+<span class="s2">- Part of a beautiful family of mid-century inspired office furniture, </span>
+<span class="s2">including filing cabinets, desks, bookcases, meeting tables, and more.</span>
+<span class="s2">- Several options of shell color and base finishes.</span>
+<span class="s2">- Available with plastic back and front upholstery (SWC-100) </span>
+<span class="s2">or full upholstery (SWC-110) in 10 fabric and 6 leather options.</span>
+<span class="s2">- Base finish options are: stainless steel, matte black, </span>
+<span class="s2">gloss white, or chrome.</span>
+<span class="s2">- Chair is available with or without armrests.</span>
+<span class="s2">- Suitable for home or business settings.</span>
+<span class="s2">- Qualified for contract use.</span>
+
+<span class="s2">CONSTRUCTION</span>
+<span class="s2">- 5-wheel plastic coated aluminum base.</span>
+<span class="s2">- Pneumatic chair adjust for easy raise/lower action.</span>
+
+<span class="s2">DIMENSIONS</span>
+<span class="s2">- WIDTH 53 CM | 20.87”</span>
+<span class="s2">- DEPTH 51 CM | 20.08”</span>
+<span class="s2">- HEIGHT 80 CM | 31.50”</span>
+<span class="s2">- SEAT HEIGHT 44 CM | 17.32”</span>
+<span class="s2">- SEAT DEPTH 41 CM | 16.14”</span>
+
+<span class="s2">OPTIONS</span>
+<span class="s2">- Soft or hard-floor caster options.</span>
+<span class="s2">- Two choices of seat foam densities: </span>
+<span class="s2"> medium (1.8 lb/ft3) or high (2.8 lb/ft3)</span>
+<span class="s2">- Armless or 8 position PU armrests </span>
+
+<span class="s2">MATERIALS</span>
+<span class="s2">SHELL BASE GLIDER</span>
+<span class="s2">- Cast Aluminum with modified nylon PA6/PA66 coating.</span>
+<span class="s2">- Shell thickness: 10 mm.</span>
+<span class="s2">SEAT</span>
+<span class="s2">- HD36 foam</span>
+
+<span class="s2">COUNTRY OF ORIGIN</span>
+<span class="s2">- Italy</span>
+<span class="s2">"""</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Your task is to help a marketing team create a </span>
+<span class="s2">description for a retail website of a product based </span>
+<span class="s2">on a technical fact sheet.</span>
+
+<span class="s2">Write a product description based on the information </span>
+<span class="s2">provided in the technical specifications delimited by </span>
+<span class="s2">triple backticks.</span>
+
+<span class="s2">Technical specifications: ```</span><span class="si">{</span><span class="n">fact_sheet_chair</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Introducing our stunning mid-century inspired office chair, the perfect addition to any home or business setting. Part of a beautiful family of office furniture, including filing cabinets, desks, bookcases, meeting tables, and more, this chair is available in several options of shell color and base finishes to suit your style. Choose from plastic back and front upholstery (SWC-100) or full upholstery (SWC-110) in 10 fabric and 6 leather options.
+
+The chair is constructed with a 5-wheel plastic coated aluminum base and features a pneumatic chair adjust for easy raise/lower action. It is available with or without armrests and is qualified for contract use. The base finish options are stainless steel, matte black, gloss white, or chrome.
+
+Measuring at a width of 53 cm, depth of 51 cm, and height of 80 cm, with a seat height of 44 cm and seat depth of 41 cm, this chair is designed for ultimate comfort. You can also choose between soft or hard-floor caster options and two choices of seat foam densities: medium (1.8 lb/ft3) or high (2.8 lb/ft3). The armrests are available in either an armless or 8 position PU option.
+
+The materials used in the construction of this chair are of the highest quality. The shell base glider is made of cast aluminum with modified nylon PA6/PA66 coating and has a shell thickness of 10 mm. The seat is made of HD36 foam, ensuring maximum comfort and durability.
+
+This chair is made in Italy and is the perfect combination of style and functionality. Upgrade your workspace with our mid-century inspired office chair today!
+</code></pre>
+<h2 id="issue-1-the-text-is-too-long">Issue 1: The text is too long</h2>
+<ul>
+<li>Limit the number of words/sentences/characters.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Your task is to help a marketing team create a </span>
+<span class="s2">description for a retail website of a product based </span>
+<span class="s2">on a technical fact sheet.</span>
+
+<span class="s2">Write a product description based on the information </span>
+<span class="s2">provided in the technical specifications delimited by </span>
+<span class="s2">triple backticks.</span>
+
+<span class="s2">Use at most 50 words.</span>
+
+<span class="s2">Technical specifications: ```</span><span class="si">{</span><span class="n">fact_sheet_chair</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Introducing our mid-century inspired office chair, perfect for home or business settings. With a variety of shell colors and base finishes, and the option of plastic or full upholstery in multiple fabrics and leathers, this chair is customizable to fit any style. The 5-wheel base and pneumatic chair adjust make it easy to use, while the choice of soft or hard-floor casters and seat foam densities ensure maximum comfort. Made in Italy with high-quality materials, this chair is also qualified for contract use.
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>513
+</code></pre>
+<h2 id="issue-2-text-focuses-on-the-wrong-details">Issue 2. Text focuses on the wrong details</h2>
+<ul>
+<li>Ask it to focus on the aspects that are relevant to the intended audience.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Your task is to help a marketing team create a </span>
+<span class="s2">description for a retail website of a product based </span>
+<span class="s2">on a technical fact sheet.</span>
+
+<span class="s2">Write a product description based on the information </span>
+<span class="s2">provided in the technical specifications delimited by </span>
+<span class="s2">triple backticks.</span>
+
+<span class="s2">The description is intended for furniture retailers, </span>
+<span class="s2">so should be technical in nature and focus on the </span>
+<span class="s2">materials the product is constructed from.</span>
+
+<span class="s2">Use at most 50 words.</span>
+
+<span class="s2">Technical specifications: ```</span><span class="si">{</span><span class="n">fact_sheet_chair</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Introducing our mid-century inspired office chair, perfect for both home and business settings. With a range of shell colors and base finishes, including stainless steel and matte black, this chair is available with or without armrests. The 5-wheel plastic coated aluminum base and pneumatic chair adjust make it easy to raise and lower. Made in Italy with a cast aluminum shell and HD36 foam seat.
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Your task is to help a marketing team create a </span>
+<span class="s2">description for a retail website of a product based </span>
+<span class="s2">on a technical fact sheet.</span>
+
+<span class="s2">Write a product description based on the information </span>
+<span class="s2">provided in the technical specifications delimited by </span>
+<span class="s2">triple backticks.</span>
+
+<span class="s2">The description is intended for furniture retailers, </span>
+<span class="s2">so should be technical in nature and focus on the </span>
+<span class="s2">materials the product is constructed from.</span>
+
+<span class="s2">At the end of the description, include every 7-character </span>
+<span class="s2">Product ID in the technical specification.</span>
+
+<span class="s2">Use at most 50 words.</span>
+
+<span class="s2">Technical specifications: ```</span><span class="si">{</span><span class="n">fact_sheet_chair</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Introducing our mid-century inspired office chair, perfect for home or business settings. With a range of shell colors and base finishes, and the option of plastic or full upholstery, this chair is both stylish and comfortable. Constructed with a 5-wheel plastic coated aluminum base and pneumatic chair adjust, it's also practical. Available with or without armrests and suitable for contract use. Product ID: SWC-100, SWC-110.
+</code></pre>
+<h2 id="issue-3-description-needs-a-table-of-dimensions">Issue 3. Description needs a table of dimensions</h2>
+<ul>
+<li>Ask it to extract information and organize it in a table.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Your task is to help a marketing team create a </span>
+<span class="s2">description for a retail website of a product based </span>
+<span class="s2">on a technical fact sheet.</span>
+
+<span class="s2">Write a product description based on the information </span>
+<span class="s2">provided in the technical specifications delimited by </span>
+<span class="s2">triple backticks.</span>
+
+<span class="s2">The description is intended for furniture retailers, </span>
+<span class="s2">so should be technical in nature and focus on the </span>
+<span class="s2">materials the product is constructed from.</span>
+
+<span class="s2">At the end of the description, include every 7-character </span>
+<span class="s2">Product ID in the technical specification.</span>
+
+<span class="s2">After the description, include a table that gives the </span>
+<span class="s2">product's dimensions. The table should have two columns.</span>
+<span class="s2">In the first column include the name of the dimension. </span>
+<span class="s2">In the second column include the measurements in inches only.</span>
+
+<span class="s2">Give the table the title 'Product Dimensions'.</span>
+
+<span class="s2">Format everything as HTML that can be used in a website. </span>
+<span class="s2">Place the description in a &lt;div&gt; element.</span>
+
+<span class="s2">Technical specifications: ```</span><span class="si">{</span><span class="n">fact_sheet_chair</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>&lt;div&gt;
+&lt;h2&gt;Mid-Century Inspired Office Chair&lt;/h2&gt;
+&lt;p&gt;Introducing our mid-century inspired office chair, part of a beautiful family of office furniture that includes filing cabinets, desks, bookcases, meeting tables, and more. This chair is available in several options of shell color and base finishes, allowing you to customize it to your liking. You can choose between plastic back and front upholstery or full upholstery in 10 fabric and 6 leather options. The base finish options are stainless steel, matte black, gloss white, or chrome. The chair is also available with or without armrests, making it suitable for both home and business settings. Plus, it's qualified for contract use, so you can trust its durability and quality.&lt;/p&gt;
+&lt;h3&gt;Construction&lt;/h3&gt;
+&lt;p&gt;The chair features a 5-wheel plastic coated aluminum base and a pneumatic chair adjust for easy raise/lower action. You can choose between soft or hard-floor caster options and two choices of seat foam densities: medium (1.8 lb/ft3) or high (2.8 lb/ft3). The chair is also available with armless or 8 position PU armrests.&lt;/p&gt;
+&lt;h3&gt;Materials&lt;/h3&gt;
+&lt;p&gt;The shell base glider is made of cast aluminum with modified nylon PA6/PA66 coating, and the shell thickness is 10 mm. The seat is made of HD36 foam, ensuring comfort and support.&lt;/p&gt;
+&lt;h3&gt;Product Dimensions&lt;/h3&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Width&lt;/td&gt;
+    &lt;td&gt;53 cm | 20.87"&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Depth&lt;/td&gt;
+    &lt;td&gt;51 cm | 20.08"&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Height&lt;/td&gt;
+    &lt;td&gt;80 cm | 31.50"&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Seat Height&lt;/td&gt;
+    &lt;td&gt;44 cm | 17.32"&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Seat Depth&lt;/td&gt;
+    &lt;td&gt;41 cm | 16.14"&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h3&gt;Product ID&lt;/h3&gt;
+&lt;p&gt;SWC-100, SWC-110&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="load-python-libraries-to-view-html">Load Python libraries to view HTML</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</code></pre></div>
+<div>
+<h2>Mid-Century Inspired Office Chair</h2>
+<p>Introducing our mid-century inspired office chair, part of a beautiful family of office furniture that includes filing cabinets, desks, bookcases, meeting tables, and more. This chair is available in several options of shell color and base finishes, allowing you to customize it to your liking. You can choose between plastic back and front upholstery or full upholstery in 10 fabric and 6 leather options. The base finish options are stainless steel, matte black, gloss white, or chrome. The chair is also available with or without armrests, making it suitable for both home and business settings. Plus, it's qualified for contract use, so you can trust its durability and quality.</p>
+<h3>Construction</h3>
+<p>The chair features a 5-wheel plastic coated aluminum base and a pneumatic chair adjust for easy raise/lower action. You can choose between soft or hard-floor caster options and two choices of seat foam densities: medium (1.8 lb/ft3) or high (2.8 lb/ft3). The chair is also available with armless or 8 position PU armrests.</p>
+<h3>Materials</h3>
+<p>The shell base glider is made of cast aluminum with modified nylon PA6/PA66 coating, and the shell thickness is 10 mm. The seat is made of HD36 foam, ensuring comfort and support.</p>
+<h3>Product Dimensions</h3>
+<table>
+  <tr>
+    <td>Width</td>
+    <td>53 cm | 20.87"</td>
+  </tr>
+  <tr>
+    <td>Depth</td>
+    <td>51 cm | 20.08"</td>
+  </tr>
+  <tr>
+    <td>Height</td>
+    <td>80 cm | 31.50"</td>
+  </tr>
+  <tr>
+    <td>Seat Height</td>
+    <td>44 cm | 17.32"</td>
+  </tr>
+  <tr>
+    <td>Seat Depth</td>
+    <td>41 cm | 16.14"</td>
+  </tr>
+</table>
+<h3>Product ID</h3>
+<p>SWC-100, SWC-110</p>
+</div></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Ashish Kumar
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ashishkrb7/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

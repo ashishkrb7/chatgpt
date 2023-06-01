@@ -1,0 +1,962 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ChatGPT Prompt Engineering for Developers">
+      
+      
+        <meta name="author" content="Ashish Kumar">
+      
+      
+      
+        <link rel="prev" href="../Inferring/">
+      
+      
+        <link rel="next" href="../Expanding/">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+    
+    
+      
+        <title>Transforming - ChatGPT Prompt Engineering for Developers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#transforming" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ChatGPT Prompt Engineering for Developers" class="md-header__button md-logo" aria-label="ChatGPT Prompt Engineering for Developers" data-md-component="logo">
+      
+  <img src="../images/chatgpt-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ChatGPT Prompt Engineering for Developers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Transforming
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Guidelines/" class="md-tabs__link">
+      Principles
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Iterative%20Prompt%20Development/" class="md-tabs__link">
+      Iterative Prompt Development
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Summarizing/" class="md-tabs__link md-tabs__link--active">
+        Capabilities
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../Chatbot/" class="md-tabs__link">
+      Chatbot
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../contact/" class="md-tabs__link">
+      Contact
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ChatGPT Prompt Engineering for Developers" class="md-nav__button md-logo" aria-label="ChatGPT Prompt Engineering for Developers" data-md-component="logo">
+      
+  <img src="../images/chatgpt-logo.png" alt="logo">
+
+    </a>
+    ChatGPT Prompt Engineering for Developers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guidelines/" class="md-nav__link">
+        Principles
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Iterative%20Prompt%20Development/" class="md-nav__link">
+        Iterative Prompt Development
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Capabilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Summarizing/" class="md-nav__link">
+        Summarizing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Inferring/" class="md-nav__link">
+        Inferring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Transforming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Transforming
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    Translation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-translator" class="md-nav__link">
+    Universal Translator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tone-transformation" class="md-nav__link">
+    Tone Transformation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-conversion" class="md-nav__link">
+    Format Conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spellcheckgrammar-check" class="md-nav__link">
+    Spellcheck/Grammar check.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Expanding/" class="md-nav__link">
+        Expanding
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chatbot/" class="md-nav__link">
+        Chatbot
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    Translation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-translator" class="md-nav__link">
+    Universal Translator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tone-transformation" class="md-nav__link">
+    Tone Transformation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-conversion" class="md-nav__link">
+    Format Conversion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spellcheckgrammar-check" class="md-nav__link">
+    Spellcheck/Grammar check.
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="transforming">Transforming</h1>
+<p>In this page, we will explore how to use Large Language Models for text transformation tasks such as language translation, spelling and grammar checking, tone adjustment, and format conversion.</p>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">openai</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span><span class="p">,</span> <span class="n">find_dotenv</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">load_dotenv</span><span class="p">(</span><span class="n">find_dotenv</span><span class="p">())</span>
+
+<span class="n">openai</span><span class="o">.</span><span class="n">api_type</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_type"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_base"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"api_version"</span><span class="p">)</span>
+<span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"OPENAI_API_KEY"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"chatgpt-gpt35-turbo"</span><span class="p">):</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}]</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">ChatCompletion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">engine</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+        <span class="n">messages</span><span class="o">=</span><span class="n">messages</span><span class="p">,</span>
+        <span class="n">temperature</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># this is the degree of randomness of the model's output</span>
+        <span class="n">max_tokens</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+        <span class="n">top_p</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+        <span class="n">frequency_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">presence_penalty</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">stop</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="p">[</span><span class="s2">"content"</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="translation">Translation</h2>
+<p>ChatGPT is trained with sources in many languages. This gives the model the ability to do translation. Here are some examples of how to use this capability.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Translate the following English text to Hindi: \ </span>
+<span class="s2">```Hi, I would like to order a blender```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>नमस्ते, मैं एक ब्लेंडर ऑर्डर करना चाहूँगा।
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Tell me which language this is: </span>
+<span class="s2">```नमस्ते, मैं एक ब्लेंडर ऑर्डर करना चाहूँगा।```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>This is Hindi.
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Translate the following  text to Hindi and Bengali</span>
+<span class="s2">and English pirate: </span><span class="se">\</span>
+<span class="s2">```I want to order a basketball```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Hindi: मैं एक बास्केटबॉल आदेश करना चाहता हूँ।
+Bengali: আমি একটি বাস্কেটবল অর্ডার করতে চাই।
+English Pirate: ```Arrr, I be wantin' to order a basketball, matey!```
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Translate the following text to Hindi in both the </span><span class="se">\</span>
+<span class="s2">formal and informal forms: </span>
+<span class="s2">'Would you like to order a pillow?'</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Formal: क्या आप एक तकिया आर्डर करना चाहेंगे?
+Informal: क्या तुम एक तकिया आर्डर करना चाहोगे?
+</code></pre>
+<h2 id="universal-translator">Universal Translator</h2>
+<p>Imagine you are in charge of IT at a large multinational e-commerce company. Users are messaging you with IT issues in all their native languages. Your staff is from all over the world and speaks only their native languages. You need a universal translator!</p>
+<div class="highlight"><pre><span></span><code><span class="n">user_messages</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s2">"La performance du système est plus lente que d'habitude."</span><span class="p">,</span>  <span class="c1"># System performance is slower than normal         </span>
+  <span class="s2">"Mi monitor tiene píxeles que no se iluminan."</span><span class="p">,</span>              <span class="c1"># My monitor has pixels that are not lighting</span>
+  <span class="s2">"Il mio mouse non funziona"</span><span class="p">,</span>                                 <span class="c1"># My mouse is not working</span>
+  <span class="s2">"Mój klawisz Ctrl jest zepsuty"</span><span class="p">,</span>                             <span class="c1"># My keyboard has a broken control key</span>
+  <span class="s2">"我的屏幕在闪烁"</span>                                               <span class="c1"># My screen is flashing</span>
+<span class="p">]</span> 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">issue</span> <span class="ow">in</span> <span class="n">user_messages</span><span class="p">:</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Tell me what language this is: ```</span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">```"</span>
+    <span class="n">lang</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Original message (</span><span class="si">{</span><span class="n">lang</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    Translate the following  text to English </span><span class="se">\</span>
+<span class="s2">    and Korean: ```</span><span class="si">{</span><span class="n">issue</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">    """</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Original message (This is French.): La performance du système est plus lente que d'habitude.
+English: The system performance is slower than usual.
+Korean: 시스템 성능이 평소보다 느립니다.
+
+Original message (This is Spanish.): Mi monitor tiene píxeles que no se iluminan.
+English: My monitor has pixels that don't light up.
+Korean: 내 모니터에는 불이 켜지지 않는 픽셀이 있습니다.
+
+Original message (This is Italian.): Il mio mouse non funziona
+English: My mouse is not working.
+Korean: 내 마우스가 작동하지 않습니다.
+
+Original message (This is Polish.): Mój klawisz Ctrl jest zepsuty
+English: My Ctrl key is broken.
+Korean: 제 Ctrl 키가 고장 났어요.
+
+Original message (This is Chinese (Simplified).): 我的屏幕在闪烁
+English: My screen is flickering.
+Korean: 내 화면이 깜빡입니다.
+</code></pre>
+<h2 id="tone-transformation">Tone Transformation</h2>
+<p>Writing can vary based on the intended audience. ChatGPT can produce different tones.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Translate the following from slang to a business letter: </span>
+<span class="s2">'Dude, This is Joe, check out this spec on this standing lamp.'</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>Dear Sir/Madam,
+
+I am writing to bring to your attention a standing lamp that I believe may be of interest to you. Please find attached the specifications for your review.
+
+Thank you for your time and consideration.
+
+Sincerely,
+
+Joe
+</code></pre>
+<h2 id="format-conversion">Format Conversion</h2>
+<p>ChatGPT can translate between formats. The prompt should describe the input and output formats.</p>
+<div class="highlight"><pre><span></span><code><span class="n">data_json</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"resturant employees"</span> <span class="p">:[</span> 
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Shyam"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">:</span><span class="s2">"shyamjaiswal@gmail.com"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">:</span><span class="s2">"bob32@gmail.com"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"Jai"</span><span class="p">,</span> <span class="s2">"email"</span><span class="p">:</span><span class="s2">"jai87@gmail.com"</span><span class="p">}</span>
+<span class="p">]}</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Translate the following python dictionary from JSON to an HTML </span><span class="se">\</span>
+<span class="s2">table with column headers and title: </span><span class="si">{</span><span class="n">data_json</span><span class="si">}</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>&lt;table&gt;
+  &lt;caption&gt;Restaurant Employees&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Shyam&lt;/td&gt;
+      &lt;td&gt;shyamjaiswal@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;bob32@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Jai&lt;/td&gt;
+      &lt;td&gt;jai87@gmail.com&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Latex</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">JSON</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</code></pre></div>
+<table>
+  <caption>Restaurant Employees</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Shyam</td>
+      <td>shyamjaiswal@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>bob32@gmail.com</td>
+    </tr>
+    <tr>
+      <td>Jai</td>
+      <td>jai87@gmail.com</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="spellcheckgrammar-check">Spellcheck/Grammar check.</h2>
+<p>Here are some examples of common grammar and spelling problems and the LLM's response. </p>
+<p>To signal to the LLM that you want it to proofread your text, you instruct the model to 'proofread' or 'proofread and correct'.</p>
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="s2">"The girl with the black and white puppies have a ball."</span><span class="p">,</span>  <span class="c1"># The girl has a ball.</span>
+  <span class="s2">"Yolanda has her notebook."</span><span class="p">,</span> <span class="c1"># ok</span>
+  <span class="s2">"Its going to be a long day. Does the car need it’s oil changed?"</span><span class="p">,</span>  <span class="c1"># Homonyms</span>
+  <span class="s2">"Their goes my freedom. There going to bring they’re suitcases."</span><span class="p">,</span>  <span class="c1"># Homonyms</span>
+  <span class="s2">"Your going to need you’re notebook."</span><span class="p">,</span>  <span class="c1"># Homonyms</span>
+  <span class="s2">"That medicine effects my ability to sleep. Have you heard of the butterfly affect?"</span><span class="p">,</span> <span class="c1"># Homonyms</span>
+  <span class="s2">"This phrase is to cherck chatGPT for speling abilitty"</span>  <span class="c1"># spelling</span>
+<span class="p">]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""Proofread and correct the following text</span>
+<span class="s2">    and rewrite the corrected version. If you don't find</span>
+<span class="s2">    and errors, just say "No errors found". Don't use </span>
+<span class="s2">    any punctuation around the text:</span>
+<span class="s2">    ```</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">```"""</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>The girl with the black and white puppies has a ball.
+No errors found.
+It's going to be a long day. Does the car need its oil changed?
+Their goes my freedom. There going to bring they're suitcases.
+
+Corrected version: 
+There goes my freedom. They're going to bring their suitcases.
+You're going to need your notebook.
+That medicine affects my ability to sleep. Have you heard of the butterfly effect?
+This phrase is to check ChatGPT for spelling ability.
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">Got this for my daughter for her birthday cuz she keeps taking </span><span class="se">\</span>
+<span class="s2">mine from my room.  Yes, adults also like pandas too.  She takes </span><span class="se">\</span>
+<span class="s2">it everywhere with her, and it's super soft and cute.  One of the </span><span class="se">\</span>
+<span class="s2">ears is a bit lower than the other, and I don't think that was </span><span class="se">\</span>
+<span class="s2">designed to be asymmetrical. It's a bit small for what I paid for it </span><span class="se">\</span>
+<span class="s2">though. I think there might be other options that are bigger for </span><span class="se">\</span>
+<span class="s2">the same price.  It arrived a day earlier than expected, so I got </span><span class="se">\</span>
+<span class="s2">to play with it myself before I gave it to my daughter.</span>
+<span class="s2">"""</span>
+<span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"proofread and correct this review: ```</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">```"</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</code></pre></div>
+<pre><code>I got this for my daughter's birthday because she keeps taking mine from my room. Yes, adults also like pandas too. She takes it everywhere with her, and it's super soft and cute. However, one of the ears is a bit lower than the other, and I don't think that was designed to be asymmetrical. Additionally, it's a bit small for what I paid for it. I think there might be other options that are bigger for the same price. On the positive side, it arrived a day earlier than expected, so I got to play with it myself before I gave it to my daughter.
+</code></pre>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">redlines</span> <span class="kn">import</span> <span class="n">Redlines</span>
+
+<span class="n">diff</span> <span class="o">=</span> <span class="n">Redlines</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">response</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">diff</span><span class="o">.</span><span class="n">output_markdown</span><span class="p">))</span>
+</code></pre></div>
+<p><span style="color:red;font-weight:700;text-decoration:line-through;">Got </span><span style="color:red;font-weight:700;">I got </span>this for my <span style="color:red;font-weight:700;text-decoration:line-through;">daughter for her </span><span style="color:red;font-weight:700;">daughter's </span>birthday <span style="color:red;font-weight:700;text-decoration:line-through;">cuz </span><span style="color:red;font-weight:700;">because </span>she keeps taking mine from my <span style="color:red;font-weight:700;text-decoration:line-through;">room.  </span><span style="color:red;font-weight:700;">room. </span>Yes, adults also like pandas <span style="color:red;font-weight:700;text-decoration:line-through;">too.  </span><span style="color:red;font-weight:700;">too. </span>She takes it everywhere with her, and it's super soft and <span style="color:red;font-weight:700;text-decoration:line-through;">cute.  One </span><span style="color:red;font-weight:700;">cute. However, one </span>of the ears is a bit lower than the other, and I don't think that was designed to be asymmetrical. <span style="color:red;font-weight:700;text-decoration:line-through;">It's </span><span style="color:red;font-weight:700;">Additionally, it's </span>a bit small for what I paid for <span style="color:red;font-weight:700;text-decoration:line-through;">it though. </span><span style="color:red;font-weight:700;">it. </span>I think there might be other options that are bigger for the same <span style="color:red;font-weight:700;text-decoration:line-through;">price.  It </span><span style="color:red;font-weight:700;">price. On the positive side, it </span>arrived a day earlier than expected, so I got to play with it myself before I gave it to my daughter.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">proofread and correct this review. Make it more compelling. </span>
+<span class="s2">Ensure it follows APA style guide and targets an advanced reader. </span>
+<span class="s2">Output in markdown format.</span>
+<span class="s2">Text: ```</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">```</span>
+<span class="s2">"""</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">get_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</code></pre></div>
+<p>Title: A Soft and Cute Panda Plushie for All Ages</p>
+<p>As an adult, I can attest that pandas are not just for kids. That's why I got this adorable panda plushie for my daughter's birthday, after she kept taking mine from my room. And let me tell you, it was a hit!</p>
+<p>The plushie is super soft and cuddly, making it the perfect companion for my daughter. She takes it everywhere with her, and it has quickly become her favorite toy. However, I did notice that one of the ears is a bit lower than the other, which I don't think was designed to be asymmetrical. But that doesn't take away from its cuteness.</p>
+<p>The only downside is that it's a bit small for the price I paid. I think there might be other options that are bigger for the same price. But overall, I'm happy with my purchase.</p>
+<p>One thing that surprised me was that it arrived a day earlier than expected. This gave me the chance to play with it myself before giving it to my daughter. And I have to say, I was impressed with the quality and attention to detail.</p>
+<p>In conclusion, if you're looking for a soft and cute panda plushie for yourself or a loved one, this is definitely a great option. Just be aware that it might be a bit smaller than expected.</p>
+<p>Thanks to the following sites:</p>
+<p>https://writingprompts.com/bad-grammar-examples/</p></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Ashish Kumar
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/ashishkrb7/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
