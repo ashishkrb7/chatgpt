@@ -7,3 +7,4 @@ mkdocs-glightbox==0.3.4
 mkdocs-autorefs==0.4.1
 mkdocs-section-index==0.3.5
 numkdoc==0.4.1
+mkdocs-video==1.5.0

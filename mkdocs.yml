@@ -10,7 +10,7 @@ copyright: "Copyright &copy; 2023 Ashish Kumar"
 nav:
   - Introduction: index.md
   - Principles: Guidelines.md
-  - Prompt Development: Iterative Prompt Development.md
+  - Iterative Prompt Development: Iterative Prompt Development.md
   - Capabilities:
     - Summarizing: Summarizing.md
     - Inferring: Inferring.md
@@ -21,10 +21,12 @@ nav:
 
 theme:
   name: material
+  favicon: images/favicon.ico
+  logo: images/chatgpt-logo.png
   features:
     - navigation.tabs
-    # - navigation.tabs.sticky
-    # - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.sections
   font: false
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -43,11 +45,6 @@ theme:
         name: Switch to light mode
   icon:
     repo: fontawesome/brands/git-alt
-extra_css:
-  - stylesheets/extra.css
-extra_javascript:
-  - javascripts/email_modal.js
-# edit_uri: ""
 
 markdown_extensions:
   - attr_list
@@ -66,11 +63,13 @@ plugins:
   - search
   - autorefs
   - glightbox
+  - mkdocs-video
 
 extra:
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ashishkrb7/
+  generator: false
 
 watch:
   - docs
