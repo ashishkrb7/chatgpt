@@ -63,7 +63,12 @@ plugins:
   - search
   - autorefs
   - glightbox
-  - mkdocs-video
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
+      css_style:
+        width: "50%"
 
 extra:
   social:

@@ -175,7 +175,7 @@ dashboard = pn.Column(
 
 dashboard
 ```
-![type:video](./images/pizza_chatbot.mp4)
+![type:video](./images/pizza_chatbot.mp4){: style='width: 100%'}
 
 ```python
 messages =  context.copy()
