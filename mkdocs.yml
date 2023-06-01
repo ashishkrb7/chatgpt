@@ -71,8 +71,6 @@ extra:
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ashishkrb7/
-  analytics:
-    provider: custom
 
 watch:
   - docs
