@@ -1,6 +1,6 @@
 # The Chat Format
 
-In this notebook, you will explore how you can utilize the chat format to have extended conversations with chatbots personalized or specialized for specific tasks or behaviors.
+In this Page we will explore how you can utilize the chat format to have extended conversations with chatbots personalized or specialized for specific tasks or behaviors.
 
 ## Setup
 
@@ -61,7 +61,7 @@ response = get_completion_from_messages(messages, temperature=1)
 print(response)
 ```
 
-    To get to the other side! Verily, a most comical jest!
+    To get to the other side! Aye, that be a classic, but it doth never fail to amuse.
     
 
 
@@ -73,7 +73,7 @@ response = get_completion_from_messages(messages, temperature=1)
 print(response)
 ```
 
-    Hello Ashish, it's nice to meet you! How can I assist you today?
+    Greetings Ashish! How may I assist you today?
     
 
 
@@ -85,7 +85,7 @@ response = get_completion_from_messages(messages, temperature=1)
 print(response)
 ```
 
-    I'm sorry, but as an AI language model, I don't have access to your name or any personal information unless you provide it to me.
+    I'm sorry, but as an AI language model, I don't have access to your personal information, so I don't know your name. You can tell me your name if you'd like, and I'd be happy to address you by it!
     
 
 
@@ -100,10 +100,11 @@ response = get_completion_from_messages(messages, temperature=1)
 print(response)
 ```
 
-    Of course! Your name is Ashish.
+    Your name is Ashish, as you mentioned earlier.
     
 
-# OrderBot
+## OrderBot
+
 We can automate the collection of user prompts and assistant responses to build a  OrderBot. The OrderBot will take orders at a pizza restaurant. 
 
 
@@ -174,64 +175,7 @@ dashboard = pn.Column(
 
 dashboard
 ```
-
-
-
-
-
-
-<style>.bk-root, .bk-root .bk:before, .bk-root .bk:after {
-  font-family: var(--jp-ui-font-size1);
-  font-size: var(--jp-ui-font-size1);
-  color: var(--jp-ui-font-color1);
-}
-</style>
-
-
-
-
-
-
-
-<div id='1002'>
-  <div class="bk-root" id="8a7d16c5-259e-4df6-9bc8-ba5258366527" data-root-id="1002"></div>
-</div>
-<script type="application/javascript">(function(root) {
-  function embed_document(root) {
-    var docs_json = {"a470452f-c3d1-452a-b47a-d1b366ede2a9":{"defs":[{"extends":null,"module":null,"name":"ReactiveHTML1","overrides":[],"properties":[]},{"extends":null,"module":null,"name":"FlexBox1","overrides":[],"properties":[{"default":"flex-start","kind":null,"name":"align_content"},{"default":"flex-start","kind":null,"name":"align_items"},{"default":"row","kind":null,"name":"flex_direction"},{"default":"wrap","kind":null,"name":"flex_wrap"},{"default":"flex-start","kind":null,"name":"justify_content"}]},{"extends":null,"module":null,"name":"GridStack1","overrides":[],"properties":[{"default":"warn","kind":null,"name":"mode"},{"default":null,"kind":null,"name":"ncols"},{"default":null,"kind":null,"name":"nrows"},{"default":true,"kind":null,"name":"allow_resize"},{"default":true,"kind":null,"name":"allow_drag"},{"default":[],"kind":null,"name":"state"}]},{"extends":null,"module":null,"name":"click1","overrides":[],"properties":[{"default":"","kind":null,"name":"terminal_output"},{"default":"","kind":null,"name":"debug_name"},{"default":0,"kind":null,"name":"clears"}]},{"extends":null,"module":null,"name":"NotificationAreaBase1","overrides":[],"properties":[{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"}]},{"extends":null,"module":null,"name":"NotificationArea1","overrides":[],"properties":[{"default":[],"kind":null,"name":"notifications"},{"default":"bottom-right","kind":null,"name":"position"},{"default":0,"kind":null,"name":"_clear"},{"default":[{"background":"#ffc107","icon":{"className":"fas fa-exclamation-triangle","color":"white","tagName":"i"},"type":"warning"},{"background":"#007bff","icon":{"className":"fas fa-info-circle","color":"white","tagName":"i"},"type":"info"}],"kind":null,"name":"types"}]},{"extends":null,"module":null,"name":"Notification","overrides":[],"properties":[{"default":null,"kind":null,"name":"background"},{"default":3000,"kind":null,"name":"duration"},{"default":null,"kind":null,"name":"icon"},{"default":"","kind":null,"name":"message"},{"default":null,"kind":null,"name":"notification_type"},{"default":false,"kind":null,"name":"_destroyed"}]},{"extends":null,"module":null,"name":"TemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]},{"extends":null,"module":null,"name":"MaterialTemplateActions1","overrides":[],"properties":[{"default":0,"kind":null,"name":"open_modal"},{"default":0,"kind":null,"name":"close_modal"}]}],"roots":{"references":[{"attributes":{"margin":[5,10,5,10],"max_length":5000,"placeholder":"Enter text here\u2026"},"id":"1003","type":"TextInput"},{"attributes":{"children":[{"id":"1009"},{"id":"1010"}],"margin":[0,0,0,0],"name":"Row00114"},"id":"1008","type":"Row"},{"attributes":{"children":[{"id":"1003"},{"id":"1004"},{"id":"1006"}],"margin":[0,0,0,0],"name":"Column00122"},"id":"1002","type":"Column"},{"attributes":{"children":[{"id":"1005"}],"margin":[0,0,0,0],"name":"Row00103"},"id":"1004","type":"Row"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00110","width":600},"id":"1010","type":"panel.models.markup.HTML"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00117","text":"&lt;p&gt;Assistant:&lt;/p&gt;"},"id":"1012","type":"panel.models.markup.HTML"},{"attributes":{"client_comm_id":"710a47fca72349238574483a1ace320c","comm_id":"e19bbc004d82465d9788aa5530b57b2e","plot_id":"1002"},"id":"1015","type":"panel.models.comm_manager.CommManager"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00112","text":"&lt;p&gt;User:&lt;/p&gt;"},"id":"1009","type":"panel.models.markup.HTML"},{"attributes":{"reload":false},"id":"1016","type":"panel.models.location.Location"},{"attributes":{"children":[{"id":"1007"}],"height":300,"margin":[0,0,0,0],"min_height":300,"name":"Row00108"},"id":"1006","type":"Row"},{"attributes":{"children":[{"id":"1008"},{"id":"1011"}],"margin":[0,0,0,0],"name":"Column00120"},"id":"1007","type":"Column"},{"attributes":{"args":{"bidirectional":false,"properties":{"event:button_click":"loading"},"source":{"id":"1005"},"target":{"id":"1006"}},"code":"\n    if ('event:button_click'.startsWith('event:')) {\n      var value = true\n    } else {\n      var value = source['event:button_click'];\n      value = value;\n    }\n    if (typeof value !== 'boolean' || source.labels !== ['Loading']) {\n      value = true\n    }\n    var css_classes = target.css_classes.slice()\n    var loading_css = ['pn-loading', 'arc']\n    if (value) {\n      for (var css of loading_css) {\n        if (!(css in css_classes)) {\n          css_classes.push(css)\n        }\n      }\n    } else {\n     for (var css of loading_css) {\n        var index = css_classes.indexOf(css)\n        if (index > -1) {\n          css_classes.splice(index, 1)\n        }\n      }\n    }\n    target['css_classes'] = css_classes\n    ","tags":[[2233742605136,[null,"event:button_click"],[null,"loading"]]]},"id":"1014","type":"CustomJS"},{"attributes":{"css_classes":["markdown"],"margin":[5,5,5,5],"name":"Markdown00115","style":{"background-color":"#F6F6F6"},"text":"&lt;p&gt;Hello! Welcome to our pizza restaurant. What can I get for you today?&lt;/p&gt;","width":600},"id":"1013","type":"panel.models.markup.HTML"},{"attributes":{"children":[{"id":"1012"},{"id":"1013"}],"margin":[0,0,0,0],"name":"Row00119"},"id":"1011","type":"Row"},{"attributes":{"icon":null,"js_event_callbacks":{"button_click":[{"id":"1014"}]},"label":"Chat!","margin":[5,10,5,10],"subscribed_events":["button_click"]},"id":"1005","type":"Button"}],"root_ids":["1002","1015","1016"]},"title":"Bokeh Application","version":"2.4.3"}};
-    var render_items = [{"docid":"a470452f-c3d1-452a-b47a-d1b366ede2a9","root_ids":["1002"],"roots":{"1002":"8a7d16c5-259e-4df6-9bc8-ba5258366527"}}];
-    root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
-    for (const render_item of render_items) {
-      for (const root_id of render_item.root_ids) {
-	const id_el = document.getElementById(root_id)
-	if (id_el.children.length && (id_el.children[0].className === 'bk-root')) {
-	  const root_el = id_el.children[0]
-	  root_el.id = root_el.id + '-rendered'
-	}
-      }
-    }
-  }
-  if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
-    embed_document(root);
-  } else {
-    var attempts = 0;
-    var timer = setInterval(function(root) {
-      if (root.Bokeh !== undefined && root.Bokeh.Panel !== undefined) {
-        clearInterval(timer);
-        embed_document(root);
-      } else if (document.readyState == "complete") {
-        attempts++;
-        if (attempts > 200) {
-          clearInterval(timer);
-          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-        }
-      }
-    }, 25, root)
-  }
-})(window);</script>
-
-
-
+![type:video](./images/pizza_chatbot.mp4)
 
 ```python
 messages =  context.copy()
@@ -245,32 +189,32 @@ response = get_completion_from_messages(messages, temperature=0)
 print(response)
 ```
 
-    Sure, here's a JSON summary of your order:
+    Here's a JSON summary of the previous food order:
     
     ```
     {
       "pizza": {
-        "size": "large",
-        "type": "mozzarella cheese",
-        "toppings": ["mushrooms"],
-        "price": 10.95
+        "type": "cheese",
+        "size": "medium",
+        "price": 9.25
       },
+      "toppings": [
+        {
+          "type": "peppers",
+          "price": 1.00
+        }
+      ],
       "drinks": [
         {
-          "type": "coke",
-          "size": "regular",
-          "price": 3.00
+          "type": "sprite",
+          "size": "medium",
+          "price": 2.00
         }
       ],
       "sides": [],
-      "total_price": 13.95
+      "total_price": 12.25
     }
     ``` 
     
-    Please note that the total price is $13.95, not $16.95 as I previously mentioned. I apologize for the mistake.
+    Note that the total price is calculated by adding up the prices of the pizza, toppings, and drinks.
     
-
-
-```python
-
-```

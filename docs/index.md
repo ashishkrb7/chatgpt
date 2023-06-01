@@ -14,7 +14,7 @@ Prompt engineering is important because it can significantly improve the perform
 
 - Install [Miniconda](https://repo.anaconda.com/miniconda/Miniconda3-py310_23.3.1-0-Windows-x86_64.exe) from https:/.conda.io/en/latest/miniconda.html#windows-installers (for python)
 
-- After Anaconda installation, go to search and run Anaconda Prompt and create virtual environment using following commands
+- After imniconda installation, go to search and run Anaconda Prompt and create virtual environment using following commands
 
     `conda create -y -n gpt python=3.11.0`
 
@@ -24,7 +24,7 @@ Prompt engineering is important because it can significantly improve the perform
     
 - Clone the repository to your local machine. 
 
-    `git clone git@code.siemens.com:vvd-in/chatgpt.git "ChatGPT Prompt Engineering for Developer"` 
+    `git clone https://github.com/ashishkrb7/chatgpt.git "ChatGPT Prompt Engineering for Developer"` 
 
 - Go to working directory
 
@@ -60,4 +60,4 @@ Here are some best practices to keep in mind when designing and refining prompts
 
 ## Conclusion
 
-Prompt engineering is a critical part of building AI applications with models like ChatGPT. By following best practices and using ChatGPT's prompt engineering tools, developers can improve the quality, relevance, and fairness of the generated text. If you're interested in learning more about prompt engineering or getting started with ChatGPT, be sure to check out the OpenAI website and documentation.
+Prompt engineering is a critical part of building AI applications with models like ChatGPT. By following best practices and using ChatGPT's prompt engineering tools, developers can improve the quality, relevance, and fairness of the generated text. If you're interested in learning more about prompt engineering or getting started with ChatGPT, be sure to check out the OpenAI website, documentation and this some of resources available in this website.

@@ -1,5 +1,6 @@
 # Summarizing
-In this lesson, you will summarize text with a focus on specific topics.
+
+In this page we will summarize text with a focus on specific topics.
 
 ## Setup
 
@@ -253,8 +254,3 @@ for i in range(len(reviews)):
     3 The product was on sale for $49 in November, but the price increased to $70-$89 in December. The base doesn't look as good as previous editions, but the reviewer plans to be gentle with it. A special tip for making smoothies is to freeze the fruits and vegetables beforehand. The motor made a funny noise after a year, and the warranty had expired. Overall quality has decreased. 
     
     
-
-
-```python
-
-```

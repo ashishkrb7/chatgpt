@@ -1,7 +1,9 @@
 # Guidelines for Prompting
-In this lesson, you'll practice two prompting principles and their related tactics in order to write effective prompts for large language models.
+
+This page describes two prompting principles and their related tactics in order to write effective prompts for large language models.
 
 ## Setup
+
 #### Load the API key and relevant Python libaries.
 
 In this course, we've provided some code that loads the OpenAI API key for you.
@@ -20,8 +22,9 @@ openai.api_version = os.getenv("api_version")
 openai.api_key = os.getenv("OPENAI_API_KEY")
 ```
 
-#### helper function
-Throughout this course, we will use OpenAI's `gpt-3.5-turbo` model and the [chat completions endpoint](https://platform.openai.com/docs/guides/chat). 
+## Helper function
+
+Throughout the discussion, we will use OpenAI's `gpt-3.5-turbo` model and the [chat completions endpoint](https://platform.openai.com/docs/guides/chat). 
 
 This helper function will make it easier to use prompts and look at the generated outputs:
 
@@ -45,7 +48,7 @@ def get_completion(prompt, model="chatgpt-gpt35-turbo"):
 - **Principle 1: Write clear and specific instructions**
 - **Principle 2: Give the model time to “think”**
 
-### Tactics
+### Principle 1: Write clear and specific instructions
 
 #### Tactic 1: Use delimiters to clearly indicate distinct parts of the input
 - Delimiters can be anything like: ```, """, < >, `<tag> </tag>`, `:`
@@ -438,27 +441,6 @@ print(response)
     Overall, the AeroGlide UltraSlim Smart Toothbrush by Boie is a highly advanced and effective toothbrush that can help you achieve a brighter, healthier smile in no time. Whether you're looking to improve your oral hygiene or simply want a more convenient and effective way to brush your teeth, this toothbrush is definitely worth considering.
     
 
-#### Notes on using the OpenAI API outside of this classroom
-
-To install the OpenAI Python library:
-```
-!pip install openai
-```
-
-The library needs to be configured with your account's secret key, which is available on the [website](https://platform.openai.com/account/api-keys). 
-
-You can either set it as the `OPENAI_API_KEY` environment variable before using the library:
- ```
- !export OPENAI_API_KEY='sk-...'
- ```
-
-Or, set `openai.api_key` to its value:
-
-```
-import openai
-openai.api_key = "sk-..."
-```
-
 #### A note about the backslash
-- In the course, we are using a backslash `\` to make the text fit on the screen without inserting newline '\n' characters.
+- We are using a backslash `\` to make the text fit on the screen without inserting newline '\n' characters.
 - GPT-3 isn't really affected whether you insert newline characters or not.  But when working with LLMs in general, you may consider whether newline characters in your prompt may affect the model's performance.

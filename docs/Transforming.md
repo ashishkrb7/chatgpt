@@ -1,6 +1,6 @@
 # Transforming
 
-In this notebook, we will explore how to use Large Language Models for text transformation tasks such as language translation, spelling and grammar checking, tone adjustment, and format conversion.
+In this page, we will explore how to use Large Language Models for text transformation tasks such as language translation, spelling and grammar checking, tone adjustment, and format conversion.
 
 ## Setup
 
@@ -95,7 +95,8 @@ print(response)
     Informal: क्या तुम एक तकिया आर्डर करना चाहोगे?
     
 
-### Universal Translator
+## Universal Translator
+
 Imagine you are in charge of IT at a large multinational e-commerce company. Users are messaging you with IT issues in all their native languages. Your staff is from all over the world and speaks only their native languages. You need a universal translator!
 
 

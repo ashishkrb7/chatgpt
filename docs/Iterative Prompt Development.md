@@ -1,5 +1,5 @@
-# Iterative Prompt Development
-In this lesson, you'll iteratively analyze and refine your prompts to generate marketing copy from a product fact sheet.
+# Iterative Prompt Develelopment
+In this page we will iteratively analyze and refine your prompts to generate marketing copy from a product fact sheet.
 
 ## Setup
 
