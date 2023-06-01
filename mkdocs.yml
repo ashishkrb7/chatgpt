@@ -2,8 +2,8 @@ site_name: ChatGPT Prompt Engineering for Developers
 site_description: ChatGPT Prompt Engineering for Developers
 site_author: Ashish Kumar
 
-repo_url: https://github.com/ashishkrb7/chatgpt
-edit_uri: edit/main/docs/
+# repo_url: https://github.com/ashishkrb7/chatgpt
+# edit_uri: edit/main/docs/
 
 copyright: "Copyright &copy; 2023 Ashish Kumar"
 
